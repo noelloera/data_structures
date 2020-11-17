@@ -1,4 +1,4 @@
-let Stack = function () {
+let myStack = function () {
   this.count = 0;
   this.storage = {};
   //Adds value parameter to the end of the stack
@@ -27,7 +27,7 @@ let Stack = function () {
   };
 };
 //Inputs
-let myStack = new Stack();
+let myStack = new myStack();
 myStack.push(1);
 myStack.push(2);
 console.log(myStack.peek());
