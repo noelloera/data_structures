@@ -1,33 +1,28 @@
-let stackFunction = function () {
-  this.count = 0;
-  this.storage = {};
-  //Adds value parameter to the end of the stack
-  this.push = function (value) {
+class StackClass {
+  count = 0;
+  storage = {};
+  push(value) {
     this.storage[this.count] = value;
     this.count++;
-  };
-  //Removes and returns the top most value from the end of the stack
-  this.pop = function () {
+  }
+  pop() {
     if (this.count === 0) {
       return undefined;
     }
-
     this.count--;
-    var result = this.storage[this.count];
+    let result = this.storage[this.count];
     delete this.storage[this.count];
     return result;
-  };
-  //Returns the current count of all the values in the stack
-  this.size = function () {
+  }
+  size() {
     return this.count;
-  };
-  //Returns the value of at the end of the stack
-  this.peek = function () {
+  }
+  peek() {
     return this.storage[this.count - 1];
-  };
-};
+  }
+}
 //Inputs
-let myStack = new stackFunction();
+let myStack = new StackClass();
 myStack.push(1);
 myStack.push(2);
 console.log(myStack.peek());

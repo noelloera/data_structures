@@ -64,30 +64,17 @@ let mySet = function () {
     });
     return differenceSet;
   };
+  //Checks if the otherSet is a subset of the values in the collection
+  this.subset = function (otherSet) {
+    let firstSet = this.values();
+    firstSet.every((value) => {
+      return otherSet.has(value);
+    });
+  };
 };
 
-class SetStructure {
-  /*constructor() {
-    this.collection = [];
-  }*/
-  collection = []
-  has(value) {
-    return this.collection.indexOf(value) !== -1;
-  }
-  add(value) {
-    if (!this.has(value)) {
-      this.collection.push(value);
-      return true;
-    }
-    false;
-  }
-  values() {
-    return this.collection;
-  }
-}
-
 let set = new mySet();
-let set2 = new SetStructure();
+
 
 set.add(1);
 set.add(2);
