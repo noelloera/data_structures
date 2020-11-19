@@ -1,6 +1,5 @@
 //Mimics the Set ES6 Object with extra functionality
 class SetClass {
-
   collection = [];
   has(value) {
     return this.collection.indexOf(value) !== -1;
