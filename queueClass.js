@@ -1,7 +1,9 @@
-
-
 class queueClass {
   collection = [];
+
+  print() {
+    console.log(this.collection);
+  }
 
   enqueue(value) {
     this.collection.push(value);
@@ -19,3 +21,21 @@ class queueClass {
     return this.collection.length === 0;
   }
 }
+
+//Inputs:
+var queue = new queueClass();
+queue.enqueue("a");
+queue.enqueue("b");
+queue.enqueue("c");
+queue.print();
+queue.dequeue();
+console.log(queue.front());
+queue.print();
+
+/*Outputs:
+
+*[ 'a', 'b', 'c' ]
+*  b
+*[ 'b', 'c' ]
+
+*/

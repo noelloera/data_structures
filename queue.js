@@ -5,29 +5,29 @@
  */
 
 let queueFunction = function () {
-  let collection = [];
+  this.collection = [];
   //Helper function to display elememts
-  let print = function () {
+  this.print = function () {
     console.log(collection);
   };
   //Push will always push to the top of array
-  let enqueue = function (value) {
+  this.enqueue = function (value) {
     collection.push(value);
   };
   //Shift will remove and return the oldest/ first array
-  let dequeue = function () {
+  this.dequeue = function () {
     return collection.shift();
   };
   //Returns the object at position [o] "first in line"
-  let front = function () {
+  this.front = function () {
     return collection[0];
   };
   //Returns the total amount of objects found in the queue/line
-  let size = function () {
+  this.size = function () {
     return collection.length;
   };
   //Returns boolean if the total amount of objects in line is 0
-  let isEmpty = function () {
+  this.isEmpty = function () {
     return collection.length === 0;
   };
 };
@@ -42,6 +42,10 @@ queue.dequeue();
 console.log(queue.front());
 queue.print();
 
-/*Outputs
+/*Outputs:
+
+*[ 'a', 'b', 'c' ]
+*  b
+*[ 'b', 'c' ]
 
 */
