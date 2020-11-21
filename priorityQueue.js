@@ -15,16 +15,14 @@ let priorityQueueFunction = function () {
           this.collection.splice(i, 0, value);
           added = true;
           break;
-        } else {
-          if (!added) {
-            //added at the end index, priority too high
-            this.collection.push(value);
-          }
         }
+      }
+      if (!added) {
+        //added at the end index, priority too high
+        this.collection.push(value);
       }
     }
   };
-
 
   this.dequeue = function () {
     //Returns only the value at index 1 of the dequeued element
@@ -52,3 +50,14 @@ pQueue.print();
 pQueue.dequeue();
 console.log(pQueue.front());
 pQueue.print();
+
+/*Output:
+* [
+  [ 'Ewa Mitulska-Wójcik', 1 ],
+  [ 'Beau Carnes', 2 ],
+  [ 'Briana Swift', 2 ],
+  [ 'Quincy Larson', 3 ]
+]
+* Beau Carnes
+* [ [ 'Beau Carnes', 2 ], [ 'Briana Swift', 2 ], [ 'Quincy Larson', 3 ] ]
+*/

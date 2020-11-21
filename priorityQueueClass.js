@@ -13,11 +13,10 @@ class priorityQueueClass {
           this.collection.splice(i, 0, value);
           added = true;
           break;
-        } else {
-          if (!added) {
-            this.collection.push(value);
-          }
         }
+      }
+      if (!added) {
+        this.collection.push(value);
       }
     }
   }
@@ -48,5 +47,12 @@ console.log(pQueue.front());
 pQueue.print();
 
 /*Output:
-
+* [
+  [ 'Ewa Mitulska-Wójcik', 1 ],
+  [ 'Beau Carnes', 2 ],
+  [ 'Briana Swift', 2 ],
+  [ 'Quincy Larson', 3 ]
+]
+* Beau Carnes
+* [ [ 'Beau Carnes', 2 ], [ 'Briana Swift', 2 ], [ 'Quincy Larson', 3 ] ]
 */
