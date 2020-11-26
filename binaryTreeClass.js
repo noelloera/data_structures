@@ -52,6 +52,8 @@ class BST {
     }
     return current.data;
   }
+    
+ //Checks while data is not equal
   find(data) {
     let current = this.root;
     while (current.data !== data) {
@@ -66,4 +68,30 @@ class BST {
     }
     return current;
   }
+    //Same as find but will return boolean
+    isPresent(data) {
+        let current = this.root;
+        while (current) {
+            if (current.data === data) {
+                return true;
+            }
+            if (current.data < data) {
+                current = current.left
+            } else {
+                current = current.right
+            }
+        }
+        return false;
+    }
+
+    remove(data) {
+        const removeNode = function (node, data) {
+            if (node == null) {
+                return null;
+                if (data === node.data) {
+                    
+                }
+            }
+        }
+    }
 }
