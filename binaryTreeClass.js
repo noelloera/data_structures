@@ -1,5 +1,5 @@
 class Node {
-  cosntructor(data, right, left) {
+  constructor(data, right, left) {
     this.data = data;
     this.right = right;
     this.left = left;

@@ -38,14 +38,24 @@ class LinkedList {
     return count;
   }
   add(data) {
+    /*
+    - This is a constant time assignment operation*
+    - Adds new node to the Head of the LinkedList O(1) Constant Time
+    */
     let new_node = new Node(data);
     new_node.next_node = this.head;
     this.head = new_node;
   }
 }
 let l1 = new LinkedList();
+//Manually creating a new Node
 N1 = new Node(10);
+//Pointing head reference to the created Node
 l1.head = N1;
+//Logging the size of the Linked List currently should only contain one
 console.log(l1.size());
+//Calls the linked List add function which adds new node to head and is constant time
 l1.add(20);
 console.log(l1.size());
+console;
+console.log(l1);
