@@ -61,6 +61,27 @@ class LinkedList {
     }
     return null;
   }
+  search_index(i) {
+    /*
+    -Searches the linked list and matches the index provided with a counter of nodes
+    -Returns null if index not found in the linked list, or current node at that index
+    -Takes O(n) Linear time
+    */
+    let current = this.head;
+    let count = 0;
+    while (current) {
+      if (i == 0) {
+        return current;
+      }
+      if (i == count) {
+        return current;
+      } else {
+        current = current.next_node;
+        count += 1;
+      }
+    }
+    return null;
+  }
   insert(data, i) {
     /*
     Inserts the desired data into the desired index by changing the next_node attributes
@@ -120,7 +141,35 @@ class LinkedList {
     }
     return `was found: ${found}, current is ${JSON.stringify(current)} `;
   }
-  remove_index() {}
+  remove_index(index) {
+    /*Will delete the node at the provided index, granted the index exists in the linked list
+    Takes Linear time becuase it cycles through each index O(n)
+    */
+    let current = this.head;
+    let previous = null;
+    let count = 0;
+    let found = false;
+    while (current && !found) {
+      if (index == 0) {
+        found = true;
+        this.head = current.next_node;
+      }
+      if (count == index && previous) {
+        found = true;
+        previous.next_node = current.next_node;
+      } else {
+        //If the index did not match the count then previous will be current
+        previous = current;
+        //Current will now be the next_node that it points to
+        current = current.next_node;
+        //count will increase by one to go to next index
+        count += 1;
+      }
+    }
+    //Will check if the count is at 0 and the index was not found
+    if (count == 0 && !found) count = null;
+    return `was found: ${found}, at index: ${index}, the deleted node was: ${current}`;
+  }
   print() {
     /*
       -Prints out a representation of the Linked List
@@ -174,3 +223,6 @@ l1.insert(25, 2);
 console.log(l1.print());
 console.log(l1.remove_data(20));
 console.log(l1.print());
+console.log(l1.remove_index(4));
+console.log(l1.print());
+console.log(l1.search_index(2));
